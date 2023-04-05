@@ -1,0 +1,1196 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.23.0310.1044                               -->
+<workbook original-version='18.1' source-build='2023.1.0 (20231.23.0310.1044)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='dim_date+ (hotel_radisson)' inline='true' name='federated.1rckoq71anbopt107d8020dw51t8' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='127.0.0.1' name='mysql.14tz52g0rjpb0z155uheb1rfyct9'>
+            <connection class='mysql' dbname='hotel_radisson' odbc-native-protocol='' one-time-sql='' port='3306' server='127.0.0.1' source-charset='' username='root' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='dim_date' table='[dim_date]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='dim_date' table='[dim_date]' type='table' />
+          <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='fact_aggregated_bookings' table='[fact_aggregated_bookings]' type='table' />
+          <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='dim_hotels' table='[dim_hotels]' type='table' />
+          <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='fact_bookings' table='[fact_bookings]' type='table' />
+          <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='dim_rooms' table='[dim_rooms]' type='table' />
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[booking_date]' value='[fact_bookings].[booking_date]' />
+          <map key='[booking_id]' value='[fact_bookings].[booking_id]' />
+          <map key='[booking_platform]' value='[fact_bookings].[booking_platform]' />
+          <map key='[booking_status]' value='[fact_bookings].[booking_status]' />
+          <map key='[capacity]' value='[fact_aggregated_bookings].[capacity]' />
+          <map key='[category]' value='[dim_hotels].[category]' />
+          <map key='[check_in_date (fact_bookings)]' value='[fact_bookings].[check_in_date]' />
+          <map key='[check_in_date]' value='[fact_aggregated_bookings].[check_in_date]' />
+          <map key='[checkout_date]' value='[fact_bookings].[checkout_date]' />
+          <map key='[city]' value='[dim_hotels].[city]' />
+          <map key='[date]' value='[dim_date].[date]' />
+          <map key='[day_type]' value='[dim_date].[day_type]' />
+          <map key='[mmm yy]' value='[dim_date].[mmm yy]' />
+          <map key='[no_guests]' value='[fact_bookings].[no_guests]' />
+          <map key='[property_id (dim_hotels)]' value='[dim_hotels].[property_id]' />
+          <map key='[property_id (fact_bookings)]' value='[fact_bookings].[property_id]' />
+          <map key='[property_id]' value='[fact_aggregated_bookings].[property_id]' />
+          <map key='[property_name]' value='[dim_hotels].[property_name]' />
+          <map key='[ratings_given]' value='[fact_bookings].[ratings_given]' />
+          <map key='[revenue_generated]' value='[fact_bookings].[revenue_generated]' />
+          <map key='[revenue_realized]' value='[fact_bookings].[revenue_realized]' />
+          <map key='[room_category (fact_bookings)]' value='[fact_bookings].[room_category]' />
+          <map key='[room_category]' value='[fact_aggregated_bookings].[room_category]' />
+          <map key='[room_class]' value='[dim_rooms].[room_class]' />
+          <map key='[room_id]' value='[dim_rooms].[room_id]' />
+          <map key='[successful_bookings]' value='[fact_aggregated_bookings].[successful_bookings]' />
+          <map key='[week no]' value='[dim_date].[week no]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mmm yy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[mmm yy]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>mmm yy</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>week no</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[week no]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>week no</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[day_type]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>day_type</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>property_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[property_id]</local-name>
+            <parent-name>[fact_aggregated_bookings]</parent-name>
+            <remote-alias>property_id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>check_in_date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[check_in_date]</local-name>
+            <parent-name>[fact_aggregated_bookings]</parent-name>
+            <remote-alias>check_in_date</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>room_category</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[room_category]</local-name>
+            <parent-name>[fact_aggregated_bookings]</parent-name>
+            <remote-alias>room_category</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>successful_bookings</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[successful_bookings]</local-name>
+            <parent-name>[fact_aggregated_bookings]</parent-name>
+            <remote-alias>successful_bookings</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>capacity</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[capacity]</local-name>
+            <parent-name>[fact_aggregated_bookings]</parent-name>
+            <remote-alias>capacity</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>property_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[property_id (dim_hotels)]</local-name>
+            <parent-name>[dim_hotels]</parent-name>
+            <remote-alias>property_id</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>property_name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[property_name]</local-name>
+            <parent-name>[dim_hotels]</parent-name>
+            <remote-alias>property_name</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[dim_hotels]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[city]</local-name>
+            <parent-name>[dim_hotels]</parent-name>
+            <remote-alias>city</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>booking_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[booking_id]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>booking_id</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>property_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[property_id (fact_bookings)]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>property_id</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>booking_date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[booking_date]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>booking_date</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>check_in_date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[check_in_date (fact_bookings)]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>check_in_date</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>checkout_date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[checkout_date]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>checkout_date</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>no_guests</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[no_guests]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>no_guests</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>room_category</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[room_category (fact_bookings)]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>room_category</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>booking_platform</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[booking_platform]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>booking_platform</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ratings_given</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ratings_given]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>ratings_given</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>booking_status</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[booking_status]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>booking_status</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue_generated</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[revenue_generated]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>revenue_generated</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue_realized</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[revenue_realized]</local-name>
+            <parent-name>[fact_bookings]</parent-name>
+            <remote-alias>revenue_realized</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>room_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[room_id]</local-name>
+            <parent-name>[dim_rooms]</parent-name>
+            <remote-alias>room_id</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>room_class</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[room_class]</local-name>
+            <parent-name>[dim_rooms]</parent-name>
+            <remote-alias>room_class</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_date' datatype='table' name='[__tableau_internal_object_id__].[dim_date_8FE30B0889764CF3A44701CD1A464E34]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_hotels' datatype='table' name='[__tableau_internal_object_id__].[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_rooms' datatype='table' name='[__tableau_internal_object_id__].[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='fact_aggregated_bookings' datatype='table' name='[__tableau_internal_object_id__].[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='fact_bookings' datatype='table' name='[__tableau_internal_object_id__].[fact_bookings_3E787C6529374F8D95C7A175701A6A84]' role='measure' type='quantitative' />
+      <column caption='Booking Date' datatype='string' name='[booking_date]' role='dimension' type='nominal' />
+      <column caption='Booking Id' datatype='string' name='[booking_id]' role='dimension' type='nominal' />
+      <column caption='Booking Platform' datatype='string' name='[booking_platform]' role='dimension' type='nominal' />
+      <column caption='Booking Status' datatype='string' name='[booking_status]' role='dimension' type='nominal' />
+      <column caption='Capacity' datatype='integer' name='[capacity]' role='measure' type='quantitative' />
+      <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+      <column caption='Check In Date (Fact Bookings)' datatype='string' name='[check_in_date (fact_bookings)]' role='dimension' type='nominal' />
+      <column caption='Check In Date' datatype='string' name='[check_in_date]' role='dimension' type='nominal' />
+      <column caption='Checkout Date' datatype='string' name='[checkout_date]' role='dimension' type='nominal' />
+      <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Date' datatype='string' name='[date]' role='dimension' type='nominal' />
+      <column caption='Day Type' datatype='string' name='[day_type]' role='dimension' type='nominal' />
+      <column caption='Mmm Yy' datatype='string' name='[mmm yy]' role='dimension' type='nominal' />
+      <column caption='No Guests' datatype='integer' name='[no_guests]' role='measure' type='quantitative' />
+      <column caption='Property Id (Dim Hotels)' datatype='integer' name='[property_id (dim_hotels)]' role='dimension' type='ordinal' />
+      <column caption='Property Id (Fact Bookings)' datatype='integer' name='[property_id (fact_bookings)]' role='dimension' type='ordinal' />
+      <column caption='Property Id' datatype='integer' name='[property_id]' role='dimension' type='ordinal' />
+      <column caption='Property Name' datatype='string' name='[property_name]' role='dimension' type='nominal' />
+      <column caption='Ratings Given' datatype='string' name='[ratings_given]' role='dimension' type='nominal' />
+      <column caption='Revenue Generated' datatype='integer' name='[revenue_generated]' role='measure' type='quantitative' />
+      <column caption='Revenue Realized' datatype='integer' name='[revenue_realized]' role='measure' type='quantitative' />
+      <column caption='Room Category (Fact Bookings)' datatype='string' name='[room_category (fact_bookings)]' role='dimension' type='nominal' />
+      <column caption='Room Category' datatype='string' name='[room_category]' role='dimension' type='nominal' />
+      <column caption='Room Class' datatype='string' name='[room_class]' role='dimension' type='nominal' />
+      <column caption='Room Id' datatype='string' name='[room_id]' role='dimension' type='nominal' />
+      <column caption='Successful Bookings' datatype='integer' name='[successful_bookings]' role='measure' type='quantitative' />
+      <column caption='Week No' datatype='string' name='[week no]' role='dimension' type='nominal' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/JIBIN/Pictures/hotel_radisson_analysis.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='04/05/2023 02:49:59 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='dim_date_8FE30B0889764CF3A44701CD1A464E34' table='[Extract].[dim_date_8FE30B0889764CF3A44701CD1A464E34]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='dim_date_8FE30B0889764CF3A44701CD1A464E34' table='[Extract].[dim_date_8FE30B0889764CF3A44701CD1A464E34]' type='table' />
+            <relation name='fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5' table='[Extract].[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]' type='table' />
+            <relation name='dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F' table='[Extract].[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]' type='table' />
+            <relation name='fact_bookings_3E787C6529374F8D95C7A175701A6A84' table='[Extract].[fact_bookings_3E787C6529374F8D95C7A175701A6A84]' type='table' />
+            <relation name='dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D' table='[Extract].[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[booking_date]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[booking_date]' />
+            <map key='[booking_id]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[booking_id]' />
+            <map key='[booking_platform]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[booking_platform]' />
+            <map key='[booking_status]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[booking_status]' />
+            <map key='[capacity]' value='[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5].[capacity]' />
+            <map key='[category]' value='[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F].[category]' />
+            <map key='[check_in_date (fact_bookings)]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[check_in_date]' />
+            <map key='[check_in_date]' value='[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5].[check_in_date]' />
+            <map key='[checkout_date]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[checkout_date]' />
+            <map key='[city]' value='[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F].[city]' />
+            <map key='[date]' value='[dim_date_8FE30B0889764CF3A44701CD1A464E34].[date]' />
+            <map key='[day_type]' value='[dim_date_8FE30B0889764CF3A44701CD1A464E34].[day_type]' />
+            <map key='[mmm yy]' value='[dim_date_8FE30B0889764CF3A44701CD1A464E34].[mmm yy]' />
+            <map key='[no_guests]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[no_guests]' />
+            <map key='[property_id (dim_hotels)]' value='[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F].[property_id]' />
+            <map key='[property_id (fact_bookings)]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[property_id]' />
+            <map key='[property_id]' value='[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5].[property_id]' />
+            <map key='[property_name]' value='[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F].[property_name]' />
+            <map key='[ratings_given]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[ratings_given]' />
+            <map key='[revenue_generated]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[revenue_generated]' />
+            <map key='[revenue_realized]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[revenue_realized]' />
+            <map key='[room_category (fact_bookings)]' value='[fact_bookings_3E787C6529374F8D95C7A175701A6A84].[room_category]' />
+            <map key='[room_category]' value='[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5].[room_category]' />
+            <map key='[room_class]' value='[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D].[room_class]' />
+            <map key='[room_id]' value='[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D].[room_id]' />
+            <map key='[successful_bookings]' value='[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5].[successful_bookings]' />
+            <map key='[week no]' value='[dim_date_8FE30B0889764CF3A44701CD1A464E34].[week no]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='dim_date+ (hotel_radisson)' increment-value='%null%' refresh-type='create' rows-inserted='20113' timestamp-start='2023-04-05 14:49:58.343' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>dim_date</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>92</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>mmm yy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[mmm yy]</local-name>
+              <parent-name>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</parent-name>
+              <remote-alias>mmm yy</remote-alias>
+              <ordinal>1</ordinal>
+              <family>dim_date</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>week no</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[week no]</local-name>
+              <parent-name>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</parent-name>
+              <remote-alias>week no</remote-alias>
+              <ordinal>2</ordinal>
+              <family>dim_date</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_type]</local-name>
+              <parent-name>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</parent-name>
+              <remote-alias>day_type</remote-alias>
+              <ordinal>3</ordinal>
+              <family>dim_date</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_8FE30B0889764CF3A44701CD1A464E34]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>property_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[property_id]</local-name>
+              <parent-name>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</parent-name>
+              <remote-alias>property_id</remote-alias>
+              <ordinal>4</ordinal>
+              <family>fact_aggregated_bookings</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>check_in_date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[check_in_date]</local-name>
+              <parent-name>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</parent-name>
+              <remote-alias>check_in_date</remote-alias>
+              <ordinal>5</ordinal>
+              <family>fact_aggregated_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>92</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>room_category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[room_category]</local-name>
+              <parent-name>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</parent-name>
+              <remote-alias>room_category</remote-alias>
+              <ordinal>6</ordinal>
+              <family>fact_aggregated_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>successful_bookings</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[successful_bookings]</local-name>
+              <parent-name>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</parent-name>
+              <remote-alias>successful_bookings</remote-alias>
+              <ordinal>7</ordinal>
+              <family>fact_aggregated_bookings</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>44</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>capacity</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[capacity]</local-name>
+              <parent-name>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</parent-name>
+              <remote-alias>capacity</remote-alias>
+              <ordinal>8</ordinal>
+              <family>fact_aggregated_bookings</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>38</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>property_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[property_id (dim_hotels)]</local-name>
+              <parent-name>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</parent-name>
+              <remote-alias>property_id</remote-alias>
+              <ordinal>9</ordinal>
+              <family>dim_hotels</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>property_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[property_name]</local-name>
+              <parent-name>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</parent-name>
+              <remote-alias>property_name</remote-alias>
+              <ordinal>10</ordinal>
+              <family>dim_hotels</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category]</local-name>
+              <parent-name>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>11</ordinal>
+              <family>dim_hotels</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>city</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[city]</local-name>
+              <parent-name>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</parent-name>
+              <remote-alias>city</remote-alias>
+              <ordinal>12</ordinal>
+              <family>dim_hotels</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>booking_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[booking_id]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>booking_id</remote-alias>
+              <ordinal>13</ordinal>
+              <family>fact_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10792</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>property_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[property_id (fact_bookings)]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>property_id</remote-alias>
+              <ordinal>14</ordinal>
+              <family>fact_bookings</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>booking_date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[booking_date]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>booking_date</remote-alias>
+              <ordinal>15</ordinal>
+              <family>fact_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>check_in_date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[check_in_date (fact_bookings)]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>check_in_date</remote-alias>
+              <ordinal>16</ordinal>
+              <family>fact_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>checkout_date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[checkout_date]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>checkout_date</remote-alias>
+              <ordinal>17</ordinal>
+              <family>fact_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>no_guests</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[no_guests]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>no_guests</remote-alias>
+              <ordinal>18</ordinal>
+              <family>fact_bookings</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>room_category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[room_category (fact_bookings)]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>room_category</remote-alias>
+              <ordinal>19</ordinal>
+              <family>fact_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>booking_platform</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[booking_platform]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>booking_platform</remote-alias>
+              <ordinal>20</ordinal>
+              <family>fact_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ratings_given</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ratings_given]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>ratings_given</remote-alias>
+              <ordinal>21</ordinal>
+              <family>fact_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>booking_status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[booking_status]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>booking_status</remote-alias>
+              <ordinal>22</ordinal>
+              <family>fact_bookings</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue_generated</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[revenue_generated]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>revenue_generated</remote-alias>
+              <ordinal>23</ordinal>
+              <family>fact_bookings</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>74</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue_realized</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[revenue_realized]</local-name>
+              <parent-name>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</parent-name>
+              <remote-alias>revenue_realized</remote-alias>
+              <ordinal>24</ordinal>
+              <family>fact_bookings</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>135</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_bookings_3E787C6529374F8D95C7A175701A6A84]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>room_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[room_id]</local-name>
+              <parent-name>[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]</parent-name>
+              <remote-alias>room_id</remote-alias>
+              <ordinal>25</ordinal>
+              <family>dim_rooms</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>room_class</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[room_class]</local-name>
+              <parent-name>[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]</parent-name>
+              <remote-alias>room_class</remote-alias>
+              <ordinal>26</ordinal>
+              <family>dim_rooms</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='dim_date' id='dim_date_8FE30B0889764CF3A44701CD1A464E34'>
+            <properties context=''>
+              <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='dim_date' table='[dim_date]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='dim_date_8FE30B0889764CF3A44701CD1A464E34' table='[Extract].[dim_date_8FE30B0889764CF3A44701CD1A464E34]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_hotels' id='dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F'>
+            <properties context=''>
+              <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='dim_hotels' table='[dim_hotels]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F' table='[Extract].[dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_rooms' id='dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D'>
+            <properties context=''>
+              <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='dim_rooms' table='[dim_rooms]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D' table='[Extract].[dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D]' type='table' />
+            </properties>
+          </object>
+          <object caption='fact_aggregated_bookings' id='fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5'>
+            <properties context=''>
+              <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='fact_aggregated_bookings' table='[fact_aggregated_bookings]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5' table='[Extract].[fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5]' type='table' />
+            </properties>
+          </object>
+          <object caption='fact_bookings' id='fact_bookings_3E787C6529374F8D95C7A175701A6A84'>
+            <properties context=''>
+              <relation connection='mysql.14tz52g0rjpb0z155uheb1rfyct9' name='fact_bookings' table='[fact_bookings]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='fact_bookings_3E787C6529374F8D95C7A175701A6A84' table='[Extract].[fact_bookings_3E787C6529374F8D95C7A175701A6A84]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[property_id]' />
+              <expression op='[property_id (dim_hotels)]' />
+            </expression>
+            <first-end-point object-id='fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5' />
+            <second-end-point object-id='dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[room_category (fact_bookings)]' />
+              <expression op='[room_id]' />
+            </expression>
+            <first-end-point object-id='fact_bookings_3E787C6529374F8D95C7A175701A6A84' />
+            <second-end-point object-id='dim_rooms_A3A9EDC4DBDF42BFBA01AEA5D7C7E53D' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[date]' />
+              <expression op='[check_in_date]' />
+            </expression>
+            <first-end-point object-id='dim_date_8FE30B0889764CF3A44701CD1A464E34' />
+            <second-end-point object-id='fact_aggregated_bookings_C75E16673BCC4BC48EB3CF04FD5FD9F5' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[property_id (dim_hotels)]' />
+              <expression op='[property_id (fact_bookings)]' />
+            </expression>
+            <first-end-point object-id='dim_hotels_F1B491834CB341E79FD41CC3D44F0B5F' />
+            <second-end-point object-id='fact_bookings_3E787C6529374F8D95C7A175701A6A84' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{822E915B-BED6-4933-BA6B-2CCFE02122F8}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FCBB3C66-81D2-4540-A48D-4A18E3BF5EBC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='240' name='Sheet 1' width='240'>
+      iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAC0UlEQVR4nO3TQQ0AIBDAMMC/58MDH7KkVbDP9szMApLO7wDgnYEhzMAQZmAIMzCEGRjC
+      DAxhBoYwA0OYgSHMwBBmYAgzMIQZGMIMDGEGhjADQ5iBIczAEGZgCDMwhBkYwgwMYQaGMAND
+      mIEhzMAQZmAIMzCEGRjCDAxhBoYwA0OYgSHMwBBmYAgzMIQZGMIMDGEGhjADQ5iBIczAEGZg
+      CDMwhBkYwgwMYQaGMANDmIEhzMAQZmAIMzCEGRjCDAxhBoYwA0OYgSHMwBBmYAgzMIQZGMIM
+      DGEGhjADQ5iBIczAEGZgCDMwhBkYwgwMYQaGMANDmIEhzMAQZmAIMzCEGRjCDAxhBoYwA0OY
+      gSHMwBBmYAgzMIQZGMIMDGEGhjADQ5iBIczAEGZgCDMwhBkYwgwMYQaGMANDmIEhzMAQZmAI
+      MzCEGRjCDAxhBoYwA0OYgSHMwBBmYAgzMIQZGMIMDGEGhjADQ5iBIczAEGZgCDMwhBkYwgwM
+      YQaGMANDmIEhzMAQZmAIMzCEGRjCDAxhBoYwA0OYgSHMwBBmYAgzMIQZGMIMDGEGhjADQ5iB
+      IczAEGZgCDMwhBkYwgwMYQaGMANDmIEhzMAQZmAIMzCEGRjCDAxhBoYwA0OYgSHMwBBmYAgz
+      MIQZGMIMDGEGhjADQ5iBIczAEGZgCDMwhBkYwgwMYQaGMANDmIEhzMAQZmAIMzCEGRjCDAxh
+      BoYwA0OYgSHMwBBmYAgzMIQZGMIMDGEGhjADQ5iBIczAEGZgCDMwhBkYwgwMYQaGMANDmIEh
+      zMAQZmAIMzCEGRjCDAxhBoYwA0OYgSHMwBBmYAgzMIQZGMIMDGEGhjADQ5iBIczAEGZgCDMw
+      hBkYwgwMYQaGMANDmIEhzMAQZmAIMzCEGRjCDAxhBoYwA0OYgSHMwBBmYAgzMIQZGMIMDGEG
+      hjADQ5iBIczAEGZgCDMwhBkYwgwMYRfMRAXcQni19AAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
